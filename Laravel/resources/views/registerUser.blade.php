@@ -8,8 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-<input id="name_txt">
-<input id="email_txt">
-<input id="password_txt">
+
+<form action="addUser1" method="post">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    NAME : <input id="name_txt" name="name">
+    EMAIL : <input id="email_txt" name="email">
+    PASSWORD : <input id="password_txt" name="password">
+    <button type="submit" name="adduser" value="Adduser">add</button>
+</form>
+
 </body>
 </html>

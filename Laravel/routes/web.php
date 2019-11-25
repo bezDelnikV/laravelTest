@@ -24,3 +24,5 @@ Route::get('database-test',function (){
 Route::get('People','tbl_usersController@index');
 
 Route::get('addUser','tbl_usersController@addUser');
+
+Route::post('/addUser1','tbl_usersController@addUserPost');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\tbl_users;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class tbl_usersController extends Controller
@@ -17,12 +18,18 @@ class tbl_usersController extends Controller
     }
     function addUser()
     {
-      $user=new \App\Model\tbl_users;
-        $user->Name = 'Zoro';
-        $user->Email = 'Zoro@gmail.com';
-        $user->Password = 'Zoro123';
+        return view('registerUser');
+    }
+
+    function addUserPost(Request $req)
+    {
+        $user = new \App\Model\tbl_users;
+        $user->Name = $req->input('name');
+        $user->Email = $req->input('email');
+        $user->Password = $req->input('password');
         $user->IsLock = true;
         $user->save();
     }
+
 
 }
