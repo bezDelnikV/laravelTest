@@ -12,9 +12,11 @@
 
 
 @foreach($persons as $person)
-    {{ $person->Name }}
+    {{ $person -> Id }} :
+    {{ $person->Name }} \
+    {{ $person -> Password }} \
+    {{ $person -> IsLock }}
+    <br>
 @endforeach
-
-
 </body>
 </html>

@@ -9,12 +9,13 @@
 </head>
 <body>
 
-<form action="addUser1" method="post">
+<form action="addUser1" method="post" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    NAME : <input id="name_txt" name="name">
-    EMAIL : <input id="email_txt" name="email">
-    PASSWORD : <input id="password_txt" name="password">
-    <button type="submit" name="adduser" value="Adduser">add</button>
+    NAME : <input name="name">
+    EMAIL : <input  name="email">
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    PASSWORD : <input  name="password">
+    <input type="submit" name="submit"></input>
 </form>
 
 </body>
